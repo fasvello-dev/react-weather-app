@@ -1,11 +1,11 @@
 import "./current-weather.css";
 
-const CurrentWeather = () => {
+const CurrentWeather = ({ city }) => {
   return (
     <div className="weather">
       <div className="top">
         <div>
-          <p className="city">Belgrado</p>
+          <p className="city">{city}</p>
           <p className="weather-description">Soleado</p>
         </div>
         <img alt="weather" className="weather-icon" src="icons/01d.png" />
