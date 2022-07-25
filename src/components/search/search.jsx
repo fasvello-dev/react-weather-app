@@ -7,7 +7,7 @@ export default function Search({ onSearchChange }) {
 
   const loadOptions = (inputValue) => {
     return fetch(
-      `${GEO_API_URL}/cities?minPopulation=1000000&namePrefix=${inputValue}`,
+      `${GEO_API_URL}/cities?minPopulation=1000000&namePrefix=${inputValue}&languageCode=es`,
       geoApiOptions
     )
       .then((response) => response.json())
