@@ -1,9 +1,11 @@
 import { useState } from "react";
-import "./App.css";
+
 import Search from "./components/search/search";
 import CurrentWeather from "./components/search/current-weather/current-weather";
 import Forecast from "./components/search/forecast/forecast";
+import BasicModal from "./components/BasicModal";
 import { WEATHER_API_KEY, WEATHER_API_URL } from "./api";
+import "./App.css";
 
 function App() {
   const [currentWeather, setCurrentWeather] = useState(null);
@@ -29,11 +31,14 @@ function App() {
   };
 
   return (
-    <div className="container">
-      <Search onSearchChange={handleOnSearchChange} />
-      {currentWeather && <CurrentWeather data={currentWeather} />}
-      {currentForecast && <Forecast data={currentForecast} />}
-    </div>
+    <>
+      <BasicModal />
+      <div className="container">
+        <Search onSearchChange={handleOnSearchChange} />
+        {currentWeather && <CurrentWeather data={currentWeather} />}
+        {currentForecast && <Forecast data={currentForecast} />}
+      </div>
+    </>
   );
 }
 
